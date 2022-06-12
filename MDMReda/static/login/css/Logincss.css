@@ -1,0 +1,8 @@
+.login {
+  align-items: flex-start;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+    background: gainsboro;
+}

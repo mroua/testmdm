@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="{% static 'login/css/login.css' %}" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container2" >
+			<div id="page_final_vente_ek1"  >
+				<div id="_bg__final_vente_ek2"  ></div>
+				<div id="n__de_fc___ek1" >
+					N<span class="char">%C2%B0 </span> de FC :
+				</div>
+				<div id="ville_ek3" >
+					Ville
+				</div>
+				<div id="showroom___ek11" >
+					Showroom :
+				</div>
+				<div id="client___ek1" >
+					Client  :
+				</div>
+				<div id="personne_a_ek3" >
+					Personne A
+				</div>
+				<div id="date___ek2" >
+					Date :
+				</div>
+				<div id="_10_10_2021_ek22" >
+					12-06-2022
+				</div>
+				<div id="tlemcen_ek9" >
+					SBA
+				</div>
+				<div id="showroom_a_ek10" >
+					Showroom A
+				</div>
+				<div id="nom_prenom_ek1" >
+					{{ dernierevente.info.nom }} {{ dernierevente.info.prenom }}
+				</div>
+				<div id="telephone___ek8" >
+					Telephone :
+				</div>
+				<div id="email___ek5" >
+					email :
+				</div>
+				<div id="_0258963147_ek3" >
+					{{ dernierevente.info.num }}
+				</div>
+				<div id="adresse___ek6" >
+					Adresse :
+				</div>
+				<div id="rue_client_ek1" >
+					{{ dernierevente.info.adr }}
+				</div>
+				<div id="clienta_gmail_com_ek1" >
+					<a href="http://clientA@gmail.com" target="_blank">{{ dernierevente.info.email }}</a>
+				</div>
+				<div id="prix_ht_ek1" >
+					Prix HT
+				</div>
+				<div id="qte_ek2" >
+					Qte
+				</div>
+				<div id="total_ht_ek1" >
+					Total HT
+				</div>
+				<div id="produit_ek4" >
+					Produit
+				</div>
+				<div id="type_ek3" >
+					Type
+				</div>
+				<div id="n__ek1" >
+					N<span class="char">%C2%B0</span>
+				</div>
+				<div id="rectangle_95_ek9"  ></div>
+				<div id="rectangle_96_ek9"  ></div>
+				<div id="rectangle_98_ek2"  ></div>
+				<div id="rectangle_106_ek3"  ></div>
+				<div id="rectangle_99_ek10"  ></div>
+				<div id="rectangle_100_ek8"  ></div>
+				<div id="_28_000_00_ek2" >
+					28 000.00
+				</div>
+				<div id="_140_000_00_ek1" >
+					28 000.00
+				</div>
+				<div id="_5_ek1" >
+					1
+				</div>
+				<div id="f_p__porte_serie_star_compose_de__ouvrant_de_porte_de_passage__finition_melamine__hauteur_2140mm__largeur_900mm__sens_d_ouverture___gauche__couleur_finza___wengue__kit_cadre___100mm__couvre_joint___90mm__kit_de_serrure___petite_cle_de_couleur_niquel__serigraphie___4f_ek2" >
+					{{ dernierevente.couleur }} <br/>
+                    {% if dernierevente.type in 'Portes de passage âme pleine,Portes de passage tubulaire' %}
+                        {{ dernierevente.ventail }} <br/>
+                        {{ dernierevente.vitrage }} <br/>
+                    {% endif %}
+                    {{ dernierevente.dimension }}  <br/>
+                    {{ dernierevente.serigraphie }}<br/>
+                    {{ dernierevente.serrure }}<br/>
+                    {{ dernierevente.oeil }}<br/>
+                </div>
+				<div id="porte_chambre_ek10" >
+					{{ dernierevente.type }}
+				</div>
+				<div id="_01_ek1" >
+					01
+				</div>
+				<div id="siege_social__lot_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_ek1" >
+					Siege social: Lot AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				</div>
+				<div id="n_r_c___99_a_9999999_99_99_n_a_i___99999999999_n_i_f___999999999999999_ek1" >
+					N<span class="char">%C2%B0R</span>R-C : 99/A/9999999-99/99  N<span class="char">%C2%B0A</span>A-I : 99999999999  N<span class="char">%C2%B0I</span>I-F : 999999999999999
+				</div>
+				<div id="telephone___0666666666_email___email_gmail_com_ek1" >
+					Telephone : 0666666666  Email : <a href="mailto:Email@gmail.com" target="_blank">Email@gmail.com</a>
+				</div>
+				<div id="ellipse_1_ek1"  ></div>
+				<div id="signature_ek1" >
+					Signature
+				</div>
+
+			</div>
+
+
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+	</body>
+</html>

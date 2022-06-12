@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="{% static 'login/css/login.css' %}" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+		<!-- Add your custom HEAD content here -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id="content-container" >
+            <a id="_rectangle_38_ek3_link" href="distributeur.html" >
+				<img src="{% static 'skins/_rectangle_38_ek3.png' %}" id="_rectangle_38_ek3" />
+				</a>
+            <div class="titre">Vente</div>
+            <div class="soustitre">Choix dimension</div>
+
+            <div id="page_distributeur_ek1"  >
+                <div class="frame__21">
+                    <a id="frame_8_ek7_cls_a" onclick="choix(12)" href="/disvente_11" >
+                        <div id="_2090x723" >
+                            2090 x 723
+                        </div>
+                    </a>
+                </div>
+
+                <div class="frame__22">
+                    <a id="frame_9_ek8_cls_a" onclick="choix(13)" href="/disvente_11" >
+                        <div id="_2090x723" >
+                            2090 x 823
+                        </div>
+                    </a>
+                </div>
+
+                <div class="frame__23">
+                    <a id="frame_10_ek6_cls_a" onclick="choix(1)" href="/disvente_11" >
+                        <div id="_2090x723" >
+                            2090 x 923
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+	</body>
+</html>
+
+
+<script>
+    function choix(val) {
+
+        $.ajax({
+            url: "choix/4/"+val,
+            type: 'get',
+            success: function (response) {
+
+            }
+        })
+    }
+</script>

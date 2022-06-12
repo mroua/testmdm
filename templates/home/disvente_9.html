@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="{% static 'login/css/login.css' %}" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+            <a id="_rectangle_38_ek3_link" href="distributeur.html" >
+				<img src="{% static 'skins/_rectangle_38_ek3.png' %}" id="_rectangle_38_ek3" />
+				</a>
+            <div class="titre">Vente</div>
+            <div class="soustitre">Type ventail</div>
+
+            <div id="page_distributeur_ek1"  >
+                <div class="frame__91">
+                    <a id="frame_5_ek9_cls_a" onclick="choix(1)" href="/disvente_15" >
+					<div id="simple_vantail" >
+						Simple vantail
+					</div>
+                        <img src="{% static 'skins/rectangle_1_ek36.png' %}" id="rectangle_1_ek36" />
+                    </a>
+                </div>
+
+                <div class="frame__92">
+
+                   <a id="frame_6_ek9_cls_a" onclick="choix(2)" href="/disvente_10" >
+					<div id="double_vantaux" >
+						Double vantaux
+					</div>
+                        <img src="{% static 'skins/rectangle_1_ek37.png' %}" id="rectangle_1_ek37" />
+                    </a>
+
+                </div>
+            </div>
+
+
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+	</body>
+</html>
+
+<script>
+    function choix(val) {
+
+        $.ajax({
+            url: "choix/9/"+val,
+            type: 'get',
+            success: function (response) {
+
+            }
+        })
+    }
+</script>

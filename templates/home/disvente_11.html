@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="{% static 'login/css/login.css' %}" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+		<!-- Add your custom HEAD content here -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id="content-container" >
+            <a id="_rectangle_38_ek3_link" href="distributeur.html" >
+				<img src="{% static 'skins/_rectangle_38_ek3.png' %}" id="_rectangle_38_ek3" />
+				</a>
+            <div class="titre">Vente</div>
+            <div class="soustitre">Choix couleur</div>
+
+            <div id="page_distributeur_ek1"  >
+                <div class="frame__21">
+                    <a id="frame_5_ek2_cls_a" onclick="choix(1)" href="/disvente_12" >
+                        <div id="azabache" >
+                            Azabache
+                        </div>
+                        <img src="{% static 'skins/rectangle_1_ek22.png' %}" id="rectangle_1_ek22" />
+                    </a>
+                </div>
+
+                <div class="frame__22">
+                    <a id="frame_5_ek2_cls_a" onclick="choix(2)" href="/disvente_12" >
+                        <div id="azabache" >
+                            Chene
+                        </div>
+                        <img src="{% static 'skins/rectangle_1_ek23.png' %}" id="rectangle_1_ek23" />
+                    </a>
+                </div>
+
+                <div class="frame__23">
+                    <a id="frame_5_ek2_cls_a" onclick="choix(3)" href="/disvente_12" >
+                        <div id="azabache" >
+                            Joplin
+                        </div>
+                        <img src="{% static 'skins/rectangle_1_ek24.png' %}" id="rectangle_1_ek24" />
+                    </a>
+                </div>
+
+
+                <div class="frame__24">
+                    <a id="frame_5_ek2_cls_a" onclick="choix(4)" href="/disvente_12" >
+                        <div id="azabache" >
+                            Stella
+                        </div>
+                        <img src="{% static 'skins/rectangle_1_ek25.png' %}" id="rectangle_1_ek25" />
+                    </a>
+                </div>
+
+                <div class="frame__25">
+                    <a id="frame_5_ek2_cls_a" onclick="choix(5)" href="/disvente_12" >
+                        <div id="azabache" >
+                            Tostado
+                        </div>
+                        <img src="{% static 'skins/rectangle_1_ek26.png' %}" id="rectangle_1_ek26" />
+                    </a>
+                </div>
+
+                <div class="frame__26">
+                    <a id="frame_5_ek2_cls_a" onclick="choix(6)" href="/disvente_12" >
+                        <div id="azabache" >
+                            Wenge
+                        </div>
+                        <img src="{% static 'skins/rectangle_1_ek27.png' %}" id="rectangle_1_ek27" />
+                    </a>
+                </div>
+            </div>
+
+
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+	</body>
+</html>
+
+
+<script>
+    function choix(val) {
+
+        $.ajax({
+            url: "choix/2/"+val,
+            type: 'get',
+            success: function (response) {
+
+            }
+        })
+    }
+</script>

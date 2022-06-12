@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="{% static 'login/css/login.css' %}" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+            <a id="_rectangle_38_ek3_link" href="distributeur.html" >
+				<img src="{% static 'skins/_rectangle_38_ek3.png' %}" id="_rectangle_38_ek3" />
+				</a>
+            <div class="titre">Vente</div>
+            <div class="soustitre">Choix dimension</div>
+
+            <div id="page_distributeur_ek1"  >
+                <div class="frame__101">
+                    <a id="frame_5_ek8_cls_a" onclick="choix(3)" href="disvente_11.html" >
+                        <div id="_2090x_400_723_" >
+                            2090x(400+723)
+                        </div>
+                    </a>
+                </div>
+
+                <div class="frame__102">
+                    <a id="frame_8_ek6_cls_a" onclick="choix(4)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(723+723)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__103">
+                    <a id="frame_6_ek8_cls_a" onclick="choix(5)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(400+823)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__104"><a id="frame_9_ek7_cls_a" onclick="choix(6)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(823+823)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__105">
+                    <a id="frame_7_ek7_cls_a" onclick="choix(7)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(400+923)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__106">
+                    <a id="frame_10_ek5_cls_a" onclick="choix(8)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(923+923)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__107"><a id="frame_11_cls_a" onclick="choix(9)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(823+823)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__108"><a id="frame_12_cls_a" onclick="choix(10)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(923+723)
+					</div>
+
+				</a>
+                </div>
+                <div class="frame__109"><a id="frame_13_cls_a" onclick="choix(11)" href="disvente_11.html" >
+					<div id="_2090x_400_723_" >
+						2090x(723+823)
+					</div>
+
+				</a>
+                </div>
+            </div>
+
+
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+	</body>
+</html>
+
+<script>
+    function choix(val) {
+
+        $.ajax({
+            url: "choix/5/"+val,
+            type: 'get',
+            success: function (response) {
+
+            }
+        })
+    }
+</script>
