@@ -34,19 +34,19 @@
 
 				<div id="frame_2"  >
 					<div id="nom_d_utilisateur" >
-						<input class="nodec" placeholder="Nom d'utilisateur">
+						<input class="nodec" placeholder="Nom d'utilisateur" id="username">
 					</div>
 
 				</div>
 
 				<div id="frame_3"  >
 					<div id="mot_de_passe" >
-						<input class="nodec" placeholder="Mot de passe">
+						<input class="nodec" placeholder="Mot de passe" id="password">
 					</div>
 
 				</div>
 
-				<a id="frame_4_cls_a" href="/distributeur" >
+				<a id="frame_4_cls_a" onclick="connexion()" >
 					<div id="connexion" style="background: #BD1622">
 						Connexion
 					</div>
@@ -67,18 +67,23 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 		</div>
 		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
-	</body>
+        <script>
+            $username =$('#username');
+            $password =$('password');
+
+            function connexion(){
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {
+                        'username':$username.val(),
+                        'password' : $password.val()
+                    },
+                    success: success
+                });
+            }
+        </script>
+    </body>
 </html>

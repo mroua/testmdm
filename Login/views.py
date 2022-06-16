@@ -1,6 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+import json
+import requests
+
+from django.contrib.auth import authenticate, login as dj_login, logout
+
+from cryptography.fernet import Fernet
+import base64
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
 # Create your views here.
 
 vente = []
@@ -15,6 +26,79 @@ choix_client = ''
 choix_informationclient = ''
 choix_ventail = ''
 choix_vitrage = ''
+
+
+def encodepassad(word):
+    #password_provided = "lmrfthzeceygt"
+    password_provided = "wordtodecrypt"
+    password = password_provided.encode()
+    salt = b'salt_'
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=100000,
+        backend=default_backend()
+    )
+    key = base64.urlsafe_b64encode(kdf.derive(password))
+
+    message = word.encode()
+
+    f = Fernet(key)
+    encrypted = f.encrypt(message)
+    return encrypted
+
+
+def Login(request):
+    if request.user.id is not None:
+        pass
+    else:
+        if request.method == "POST":
+            pass
+        else:
+            return render(request, "Login/login.html")
+
+    if (request.user.id is None):
+        if request.method == 'POST':
+
+            username = request.POST['username']
+            password = request.POST['password']
+
+            user = User.objects.filter(Q(username=username) | Q(email= username))
+
+            if(len(user) != 0):
+                if(user[0].last_name == "Admin"):
+                    djangopassword = "15/12/20:10:16--Les larmes qui coulent sont amères mais plus amères encore sont celles qui ne coulent pas."
+                    password = encodepassad(password)
+                    #print("http://10.10.10.64:8180/newlog/?identifiant=" + identifiant + "&password=" + str(password))
+
+
+                    requettelogin = json.loads(requests.post("http://10.10.10.64:8180/newlog/?identifiant=" + username + "&password=" + str(password)).text)
+                    if (requettelogin == "erreur"):
+                        return HttpResponse('Error')
+                    else:
+
+                        pseudo = requettelogin['pseudo']
+                        email = requettelogin['email']
+
+                        login = authenticate(username=pseudo, password=djangopassword)
+                        dj_login(request, login)
+
+                        return HttpResponse('Success')
+                else:
+                    login = authenticate(username=user[0], password=password)
+                    dj_login(request, login)
+
+                    if (login is not None):
+                        dj_login(request, login)
+
+                        return HttpResponse('Success')
+                    else:
+                        return HttpResponse('Error')
+        else:
+            return render(request, "Login/login.html")
+    else:
+        return HttpResponseRedirect('/mdm')
 
 def Choix(request, pk, pk2):
 

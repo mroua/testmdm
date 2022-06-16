@@ -4,6 +4,7 @@ from Login import views
 
 urlpatterns = [
     path('', views.Index),
+    path('login', views.Login),
     path('distributeur', views.distributeur),
     path('disvente_1', views.disvente_1),
     path('disvente_2', views.disvente_2),
